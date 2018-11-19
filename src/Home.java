@@ -69,8 +69,6 @@ public class Home {
 		
 		ImageIcon img=new ImageIcon("eci.jpg");
 		
-		//img.IconHeight(500);
-		//img.getIconHeight(500);
 		JLabel label_2 = new JLabel("\u0968\u0966\u0967\u096E");
 		label_2.setForeground(new Color(0, 128, 0));
 		label_2.setFont(new Font("Dialog", Font.BOLD, 34));
@@ -79,7 +77,10 @@ public class Home {
 		
 		 btnLogin.addActionListener(new ActionListener(){  
 			    public void actionPerformed(ActionEvent e){  
-			             
+			             JFrame jr=new JFrame();
+			             jr.setVisible(true);
+			             jr.setLocation(50,100);
+			             jr.setSize(400,500);
 			    }  
 			    });  
 		
