@@ -118,7 +118,6 @@ public class Home {
 			    }
 			    });
 
-		Here I made a change
 		 JLabel logo = new JLabel("",new ImageIcon("C:\\Users\\Tanishk Pokhariya\\Downloads\\EVM-master\\EVM-master\\src\\ecj.jpg"),JLabel.CENTER);
 		logo.setBounds(10, 12, 70, 70);
 		f.getContentPane().add(logo);
