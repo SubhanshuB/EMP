@@ -137,14 +137,6 @@ public class Home {
 						}  
 							  
 					});
-						 
-					 
-					 /*jr.getContentPane().add(button);
-			         jr.setVisible(true);
-			         jr.setLocation(50,100);
-			         jr.setSize(400,500);*/
-
-
 
 			    }
 			    });
