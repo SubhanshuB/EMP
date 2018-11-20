@@ -19,22 +19,22 @@ public class Home {
 		f.getContentPane().setBackground(Color.WHITE);
 
 		JButton b=new JButton("VALIDATE");
-		b.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 16));
+		b.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 18));
 		b.setBackground(new Color(30, 144, 255));
 		b.setForeground(new Color(255, 255, 255));
-		b.setBounds(193,366,107, 37);
+		b.setBounds(235,487,120, 37);
 		JTextField voterid=new JTextField("");
-		voterid.setBounds(284,315,176,25);
+		voterid.setBounds(326,424,200,30);
 
 		f.getContentPane().add(b);
 		f.getContentPane().add(voterid);
-		f.setSize(500,600);
+		f.setSize(600,700);
 		f.getContentPane().setLayout(null);
 
 		JLabel lblEnterYourVoter = new JLabel("Enter Your Voter ID Number here");
 		lblEnterYourVoter.setFont(new Font("Dialog", Font.BOLD, 15));
 		lblEnterYourVoter.setForeground(new Color(0, 0, 0));
-		lblEnterYourVoter.setBounds(29, 316, 243, 20);
+		lblEnterYourVoter.setBounds(71, 425, 243, 20);
 		f.getContentPane().add(lblEnterYourVoter);
 
 		JButton btnLogin = new JButton("ADMIN LOGIN");
@@ -42,7 +42,7 @@ public class Home {
 		btnLogin.setBackground(new Color(30, 144, 255));
 		btnLogin.setBorder(null);
 		btnLogin.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 16));
-		btnLogin.setBounds(364, 12, 110, 30);
+		btnLogin.setBounds(455, 12, 110, 30);
 		f.getContentPane().add(btnLogin);
 
 		JLabel lblLokSabhaElection = new JLabel("Lok Sabha Election Voting \r\n");
@@ -50,25 +50,25 @@ public class Home {
 		lblLokSabhaElection.setFont(new Font("Consolas", Font.BOLD, 32));
 		lblLokSabhaElection.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-		lblLokSabhaElection.setBounds(16, 83, 458, 38);
+		lblLokSabhaElection.setBounds(71, 165, 468, 49);
 		f.getContentPane().add(lblLokSabhaElection);
 
 		JLabel label = new JLabel("2018");
 		label.setForeground(new Color(0, 128, 0));
 		label.setFont(new Font("Dialog", Font.BOLD, 34));
-		label.setBounds(205, 123, 83, 49);
+		label.setBounds(259, 205, 83, 49);
 		f.getContentPane().add(label);
 
 		JLabel label_1 = new JLabel("\u0932\u094B\u0915\u0938\u092D\u093E \u091A\u0941\u0928\u093E\u0935 \u092E\u0924\u0926\u093E\u0928");
 		label_1.setForeground(new Color(34, 139, 34));
-		label_1.setFont(new Font("Mangal", Font.BOLD, 32));
-		label_1.setBounds(79, 166, 341, 54);
+		label_1.setFont(new Font("Dialog", Font.BOLD, 42));
+		label_1.setBounds(101, 254, 384, 66);
 		f.getContentPane().add(label_1);
 
 		JLabel label_2 = new JLabel("\u0968\u0966\u0967\u096E");
 		label_2.setForeground(new Color(0, 128, 0));
 		label_2.setFont(new Font("Dialog", Font.BOLD, 34));
-		label_2.setBounds(196, 230, 93, 44);
+		label_2.setBounds(262, 320, 93, 44);
 		f.getContentPane().add(label_2);
 
 		 btnLogin.addActionListener(new ActionListener(){
@@ -108,6 +108,15 @@ public class Home {
 					 button.setBorder(null);
 					 button.setBackground(new Color(30, 144, 255));
 					 button.setBounds(131, 362, 120, 50);
+					
+					jr.getContentPane().add(button);
+					
+					JLabel logo = new JLabel("",new ImageIcon("C:\\Users\\Subhanshu\\Documents\\GitHub\\EVM\\src\\Images\\orignal._100x100.png"),JLabel.CENTER);
+					logo.setBounds(126, 12, 100, 100);
+					jr.getContentPane().add(logo);
+			        jr.setVisible(true);
+			        jr.setLocation(50,100);
+			        jr.setSize(400,500);
 					 button.addActionListener(new ActionListener()
 					 {
 						 public void actionPerformed(ActionEvent e)
@@ -130,22 +139,24 @@ public class Home {
 					});
 						 
 					 
-					 jr.getContentPane().add(button);
+					 /*jr.getContentPane().add(button);
 			         jr.setVisible(true);
 			         jr.setLocation(50,100);
-			         jr.setSize(400,500);
+			         jr.setSize(400,500);*/
 
-			         JLabel bgpic = new JLabel("",new ImageIcon("C:\\Users\\Tanishk Pokhariya\\Downloads\\EVM-master\\EVM-master\\src\\eci.png"),JLabel.CENTER);
-			 		 bgpic.setBounds(10, 12, 70, 70);
 
 
 			    }
 			    });
 		 
-		 JLabel logo = new JLabel("",new ImageIcon("C:\\Users\\Subhanshu\\Documents\\GitHub\\EVM\\src\\seci.png"),JLabel.CENTER);
-		logo.setBounds(10, 12, 70, 70);
+		 JLabel logo = new JLabel("",new ImageIcon("C:\\Users\\Subhanshu\\Documents\\GitHub\\EVM\\src\\Images\\complete logo.png"),JLabel.CENTER);
+		logo.setBounds(27, 25, 414, 103);
 		//MarqueePanel mp=new MarqueePanel();
 		f.getContentPane().add(logo);
+		
+		JLabel label_3 = new JLabel("", new ImageIcon("C:\\Users\\Subhanshu\\Documents\\GitHub\\EVM\\src\\Images\\invertedbigeci.png"), SwingConstants.CENTER);
+		label_3.setBounds(321, 399, 501, 500);
+		f.getContentPane().add(label_3);
 		f.setVisible(true);
 	}
 }
