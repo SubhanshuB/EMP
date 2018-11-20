@@ -112,7 +112,8 @@ public class Home {
 					 {
 						 public void actionPerformed(ActionEvent e)
 						 {
-							 try{  
+							 try     
+							 {  
 							 Class.forName("com.mysql.jdbc.Driver");  
 							 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/sonoo","root","root");  
 							 //here sonoo is database name, root is username and password  
@@ -122,8 +123,8 @@ public class Home {
 							 System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  
 							 con.close();  
 							 }
-							 catch(Exception e)
-							 { System.out.println(e);}  
+							 catch(Exception eq)
+							 { System.out.println(eq);}  
 						}  
 							  
 					});
