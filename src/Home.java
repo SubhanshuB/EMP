@@ -1,5 +1,6 @@
 import java.util.*;
 import javax.swing.*;
+import java.sql.*;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -102,10 +103,27 @@ public class Home {
 
 					 JButton button = new JButton("LOGIN");
 					 button.setForeground(Color.WHITE);
+					 
 					 button.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 28));
 					 button.setBorder(null);
 					 button.setBackground(new Color(30, 144, 255));
 					 button.setBounds(131, 362, 120, 50);
+					 button.addActionListener(new ActionListener()
+					 {
+						 public void actionPerformed(ActionEvent e)
+						 {
+							 try {
+								   Class.forName("oracle.jdbc.driver.OracleDriver");
+								}
+								catch(ClassNotFoundException ex) {
+								   System.out.println("Error: unable to load driver class!");
+								   System.exit(1);
+								}
+							 DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+						 }
+						 
+					 });
+					 
 					 jr.getContentPane().add(button);
 			         jr.setVisible(true);
 			         jr.setLocation(50,100);
@@ -117,9 +135,10 @@ public class Home {
 
 			    }
 			    });
-
+		 
 		 JLabel logo = new JLabel("",new ImageIcon("C:\\Users\\Tanishk Pokhariya\\Downloads\\EVM-master\\EVM-master\\src\\ecj.jpg"),JLabel.CENTER);
 		logo.setBounds(10, 12, 70, 70);
+		//MarqueePanel mp=new MarqueePanel();
 		f.getContentPane().add(logo);
 		f.setVisible(true);
 	}
