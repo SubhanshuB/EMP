@@ -112,17 +112,22 @@ public class Home {
 					 {
 						 public void actionPerformed(ActionEvent e)
 						 {
-							 try {
-								   Class.forName("oracle.jdbc.driver.OracleDriver");
-								}
-								catch(ClassNotFoundException ex) {
-								   System.out.println("Error: unable to load driver class!");
-								   System.exit(1);
-								}
-							 DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-						 }
+							 try{  
+							 Class.forName("com.mysql.jdbc.Driver");  
+							 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/sonoo","root","root");  
+							 //here sonoo is database name, root is username and password  
+							 Statement stmt=con.createStatement();  
+							 ResultSet rs=stmt.executeQuery("select * from emp");  
+							 while(rs.next())  
+							 System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  
+							 con.close();  
+							 }
+							 catch(Exception e)
+							 { System.out.println(e);}  
+						}  
+							  
+					});
 						 
-					 });
 					 
 					 jr.getContentPane().add(button);
 			         jr.setVisible(true);
@@ -136,7 +141,7 @@ public class Home {
 			    }
 			    });
 		 
-		 JLabel logo = new JLabel("",new ImageIcon("C:\\Users\\Tanishk Pokhariya\\Downloads\\EVM-master\\EVM-master\\src\\ecj.jpg"),JLabel.CENTER);
+		 JLabel logo = new JLabel("",new ImageIcon("C:\\Users\\Subhanshu\\Documents\\GitHub\\EVM\\src\\seci.png"),JLabel.CENTER);
 		logo.setBounds(10, 12, 70, 70);
 		//MarqueePanel mp=new MarqueePanel();
 		f.getContentPane().add(logo);
