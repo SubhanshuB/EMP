@@ -1,7 +1,7 @@
 import java.util.*;
 import javax.swing.*;
 import javax.swing.Timer;
-import pack.Marquee;
+//import pack.Marquee;
 import java.sql.*;
 import java.awt.*;
 import java.awt.Color;
@@ -11,11 +11,11 @@ import java.awt.Image;
 import java.awt.SystemColor;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 import java.awt.Component;
 public class Home {
 
-	//public static String check;
 	public static int check;
 	public static void main(String ar[])
 	{
@@ -146,6 +146,28 @@ public class Home {
 
 					 JButton button = new JButton("LOGIN");
 					 button.setForeground(Color.WHITE);
+					 button.addActionListener(new ActionListener()
+					 {
+						 public void actionPerformed(ActionEvent e)
+						 {
+							String usrname = textField.getText();
+							String pswrd = String.valueOf(passwordField.getPassword());
+							if(usrname.equals("administrator") && pswrd.equals("graphicera"))
+								{
+									System.out.println("Login Sucessful");
+									Votingpage vp= new Votingpage();
+									
+									//vp.setVisible(true);
+									jr.dispatchEvent(new WindowEvent(jr, WindowEvent.WINDOW_CLOSING));
+									
+									
+								}
+							else
+								JOptionPane.showMessageDialog(f,"Invalid User Name or Password","Error",JOptionPane.ERROR_MESSAGE);
+							 
+						 }  
+							  
+					});
 					 
 					 button.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 28));
 					 button.setBorder(null);
