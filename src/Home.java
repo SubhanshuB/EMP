@@ -50,14 +50,14 @@ public class Home {
 					else
 					 {
 						JOptionPane.showMessageDialog(f,"Invalid Voter Id Number");
-						//System.out.println("Invalid Input");}
+						
 					 }
 				  
 				 
 				 con.close();  
 				 }
 				 catch(Exception eq)
-				 { //System.out.println("Error found in try block");
+				 { 
 					 JOptionPane.showMessageDialog(f,"Voter Id cannot be Empty\n Please Enter Again","Error",JOptionPane.ERROR_MESSAGE);
 				 }  
 				 
