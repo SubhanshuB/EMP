@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/Images</name>
+			<type>2</type>
+			<location>C:/Users/Tanishk Pokhariya/Documents/GitHub/EVM/src/Images</location>
+		</link>
+	</linkedResources>
 </projectDescription>
