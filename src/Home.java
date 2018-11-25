@@ -17,7 +17,7 @@ import java.awt.Component;
 public class Home {
 
 	public static int check;
-	public static void main(String ar[])
+	public static void run()
 	{
 		JFrame f=new JFrame();
 		JTextField voterid=new JTextField("");
@@ -46,7 +46,9 @@ public class Home {
 				 
 				
 					if(rs.next())
-					{ System.out.println("Happy");}
+					{
+						Votingpage.run();
+					}
 					else
 					 {
 						JOptionPane.showMessageDialog(f,"Invalid Voter Id Number");
@@ -114,7 +116,8 @@ public class Home {
 		f.getContentPane().add(label_2);
 
 		 btnLogin.addActionListener(new ActionListener(){
-			    public void actionPerformed(ActionEvent e){
+			    public void actionPerformed(ActionEvent e)
+			    {					 
 			    	JFrame jr=new JFrame();
 			    	JTextField textField;
 			    	JPasswordField passwordField;
@@ -144,7 +147,9 @@ public class Home {
 					 passwordField.setBounds(35, 286, 300, 50);
 					 jr.getContentPane().add(passwordField);
 
-					 JButton button = new JButton("LOGIN");
+					 JButton button = new JButton("ABORT VOTING");
+					 button.setLocation(85, 367);
+					 button.setSize(205, 38);
 					 button.setForeground(Color.WHITE);
 					 button.addActionListener(new ActionListener()
 					 {
@@ -152,15 +157,24 @@ public class Home {
 						 {
 							String usrname = textField.getText();
 							String pswrd = String.valueOf(passwordField.getPassword());
-							if(usrname.equals("administrator") && pswrd.equals("graphicera"))
+							if(usrname.equals("a") && pswrd.equals("a"))
 								{
-									System.out.println("Login Sucessful");
-									Votingpage vp= new Votingpage();
-									
-									//vp.setVisible(true);
+									int output = JOptionPane.showConfirmDialog(jr
+							               , "Are you sure you want to ABORT?"
+							               ,"Confirm"
+							               ,JOptionPane.YES_NO_OPTION);
+
+							            if(output == JOptionPane.YES_OPTION)
+							            {
+							            	
+							            	jr.dispose();
+							            	f.dispose();
+							            } 
+							            else if(output == JOptionPane.NO_OPTION)
+							            {
+							            	
+							            }
 									jr.dispatchEvent(new WindowEvent(jr, WindowEvent.WINDOW_CLOSING));
-									
-									
 								}
 							else
 								JOptionPane.showMessageDialog(f,"Invalid User Name or Password","Error",JOptionPane.ERROR_MESSAGE);
@@ -172,7 +186,6 @@ public class Home {
 					 button.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 28));
 					 button.setBorder(null);
 					 button.setBackground(new Color(30, 144, 255));
-					 button.setBounds(131, 362, 120, 50);
 					
 					jr.getContentPane().add(button);
 					
@@ -182,8 +195,6 @@ public class Home {
 			        jr.setVisible(true);
 			        jr.setLocation(50,100);
 			        jr.setSize(400,500);
-					 
-
 			    }
 			    });
 		 
@@ -196,7 +207,6 @@ public class Home {
 		
 		JLabel label_3 = new JLabel("", new ImageIcon("C:\\Users\\Tanishk Pokhariya\\Documents\\GitHub\\EVM\\src\\Images\\invertedbigeci.png"), SwingConstants.CENTER);
 		label_3.setBounds(321, 399, 501, 500);
-		//check=Integer.parseInt(voterid.getText());
 		
 		f.setTitle( "Electronic Voting Machine V2.0" );
 		
