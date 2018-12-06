@@ -39,15 +39,16 @@ public class Home {
 				 {  
 					 check=Integer.parseInt(voterid.getText());
 				 Class.forName("com.mysql.jdbc.Driver");  
-				 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/evm","root","");  
-				 //here sonoo is database name, root is username and password  
+				 Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/evm","root",""); 
 				 Statement stmt=con.createStatement();  
-				 ResultSet rs=stmt.executeQuery("select * from validacc where Voter_id='"+ check +"'");  
-				 
-				
+				 ResultSet rs=stmt.executeQuery("select * from validacc where Voter_id='"+ check +"'");  			 
 					if(rs.next())
 					{
-						Votingpage.run();
+						 int s=rs.getInt("status");
+						if(s==0)
+							Votingpage.run();
+						else
+							JOptionPane.showMessageDialog(f,"You've already voted");
 					}
 					else
 					 {
@@ -60,6 +61,7 @@ public class Home {
 				 }
 				 catch(Exception eq)
 				 { 
+					 System.out.println(eq);
 					 JOptionPane.showMessageDialog(f,"Voter Id cannot be Empty\n Please Enter Again","Error",JOptionPane.ERROR_MESSAGE);
 				 }  
 				 
@@ -166,7 +168,7 @@ public class Home {
 
 							            if(output == JOptionPane.YES_OPTION)
 							            {
-							            	
+							            	Result.run();
 							            	jr.dispose();
 							            	f.dispose();
 							            } 

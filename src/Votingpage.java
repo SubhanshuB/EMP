@@ -15,7 +15,6 @@ import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 import java.awt.Component;
 public class Votingpage {
-	private JTable table;
 
 	public static void run() {
 
@@ -120,13 +119,31 @@ public class Votingpage {
 
 			            if(output == JOptionPane.YES_OPTION)
 			            {
-			            	
+			            	try     
+			       		 	{  
+			            		Class.forName("com.mysql.jdbc.Driver");  
+			            		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/evm","root","");  
+			            		//here sonoo is database name, root is username and password  
+			            		Statement stmt=con.createStatement();  
+			            		ResultSet rs=stmt.executeQuery("select * from votes"); 
+			            		rs.next();
+			            		int i=rs.getInt("BJP");
+			            		i++;
+			            		int rsq=stmt.executeUpdate("UPDATE votes SET BJP= '"+ i +"'");
+			            		int status=stmt.executeUpdate("UPDATE validacc SET status=1 where Voter_id='"+Home.check+"'");
+			            		con.close();  
+			            		
+			       		 }
+			       		 catch(Exception eq)
+			       		 { 
+			       			 System.out.println(eq);
+			       		 }  
 			            	frame.dispose();
 			            } 
 			            else if(output == JOptionPane.NO_OPTION)
 			            {
-			            	
-			            }
+			            
+			            }			 
 			         	 
 			 }  
 				  
@@ -143,6 +160,25 @@ public class Votingpage {
 
 			            if(output == JOptionPane.YES_OPTION)
 			            {
+			            	try     
+			       		 	{  
+			            		Class.forName("com.mysql.jdbc.Driver");  
+			            		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/evm","root","");  
+			            		//here sonoo is database name, root is username and password  
+			            		Statement stmt=con.createStatement();  
+			            		ResultSet rs=stmt.executeQuery("select * from votes"); 
+			            		rs.next();
+			            		int i=rs.getInt("CONGRESS");
+			            		i++;
+			            		int rsq=stmt.executeUpdate("UPDATE votes SET CONGRESS= '"+ i +"'");
+			            		int status=stmt.executeUpdate("UPDATE validacc SET status=1 where Voter_id='"+Home.check+"'");
+			            		con.close();  
+			            		
+			       		 }
+			       		 catch(Exception eq)
+			       		 { 
+			       			 System.out.println(eq);
+			       		 } 
 			            	frame.dispose();
 			            } 
 			            else if(output == JOptionPane.NO_OPTION)
@@ -164,6 +200,25 @@ public class Votingpage {
 
 			            if(output == JOptionPane.YES_OPTION)
 			            {
+			            	try     
+			       		 	{  
+			            		Class.forName("com.mysql.jdbc.Driver");  
+			            		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/evm","root","");  
+			            		//here sonoo is database name, root is username and password  
+			            		Statement stmt=con.createStatement();  
+			            		ResultSet rs=stmt.executeQuery("select * from votes"); 
+			            		rs.next();
+			            		int i=rs.getInt("AAP");
+			            		i++;
+			            		int rsq=stmt.executeUpdate("UPDATE votes SET AAP= '"+ i +"'");
+			            		int status=stmt.executeUpdate("UPDATE validacc SET status=1 where Voter_id='"+Home.check+"'");
+			            		con.close();  
+			            		
+			       		 }
+			       		 catch(Exception eq)
+			       		 { 
+			       			 System.out.println(eq);
+			       		 } 
 			            	frame.dispose();
 			            } 
 			            else if(output == JOptionPane.NO_OPTION)
@@ -185,6 +240,25 @@ public class Votingpage {
 
 			            if(output == JOptionPane.YES_OPTION)
 			            {
+			            	try     
+			       		 	{  
+			            		Class.forName("com.mysql.jdbc.Driver");  
+			            		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/evm","root","");  
+			            		//here sonoo is database name, root is username and password  
+			            		Statement stmt=con.createStatement();  
+			            		ResultSet rs=stmt.executeQuery("select * from votes"); 
+			            		rs.next();
+			            		int i=rs.getInt("BSP");
+			            		i++;
+			            		int rsq=stmt.executeUpdate("UPDATE votes SET BSP= '"+ i +"'");
+			            		int status=stmt.executeUpdate("UPDATE validacc SET status=1 where Voter_id='"+Home.check+"'");
+			            		con.close();  
+			            		
+			       		 }
+			       		 catch(Exception eq)
+			       		 { 
+			       			 System.out.println(eq);
+			       		 } 
 			            	frame.dispose();
 			            } 
 			            else if(output == JOptionPane.NO_OPTION)
@@ -206,6 +280,25 @@ public class Votingpage {
 
 			            if(output == JOptionPane.YES_OPTION)
 			            {
+			            	try     
+			       		 	{  
+			            		Class.forName("com.mysql.jdbc.Driver");  
+			            		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/evm","root","");  
+			            		//here sonoo is database name, root is username and password  
+			            		Statement stmt=con.createStatement();  
+			            		ResultSet rs=stmt.executeQuery("select * from votes"); 
+			            		rs.next();
+			            		int i=rs.getInt("RJP");
+			            		i++;
+			            		int rsq=stmt.executeUpdate("UPDATE votes SET RJP= '"+ i +"'");
+			            		int status=stmt.executeUpdate("UPDATE validacc SET status=1 where Voter_id='"+Home.check+"'");
+			            		con.close();  
+			            		
+			       		 }
+			       		 catch(Exception eq)
+			       		 { 
+			       			 System.out.println(eq);
+			       		 } 
 			            	frame.dispose();
 			            } 
 			            else if(output == JOptionPane.NO_OPTION)
@@ -227,6 +320,25 @@ public class Votingpage {
 
 			            if(output == JOptionPane.YES_OPTION)
 			            {
+			            	try     
+			       		 	{  
+			            		Class.forName("com.mysql.jdbc.Driver");  
+			            		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/evm","root","");  
+			            		//here sonoo is database name, root is username and password  
+			            		Statement stmt=con.createStatement();  
+			            		ResultSet rs=stmt.executeQuery("select * from votes"); 
+			            		rs.next();
+			            		int i=rs.getInt("NOTA");
+			            		i++;
+			            		int rsq=stmt.executeUpdate("UPDATE votes SET NOTA= '"+ i +"'");
+			            		int status=stmt.executeUpdate("UPDATE validacc SET status=1 where Voter_id='"+Home.check+"'");
+			            		con.close();  
+			            		
+			       		 }
+			       		 catch(Exception eq)
+			       		 { 
+			       			 System.out.println(eq);
+			       		 } 
 			            	frame.dispose();
 			            } 
 			            else if(output == JOptionPane.NO_OPTION)
